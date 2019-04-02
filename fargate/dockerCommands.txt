@@ -1,0 +1,5 @@
+docker build -t fargate-news-aggregator .
+docker run -p 8080:8080 -t fargate-news-aggregator
+docker ps -a
+docker kill Image_ID
+docker rm Image_ID
