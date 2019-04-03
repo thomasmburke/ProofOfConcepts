@@ -17,7 +17,7 @@ class S3Ops:
         """
         try:
             # streams data to s3
-            upload = self.s3Resource.Object(self.bucketName, key).put(Body=data)
+            upload = self.s3Resource.Object(self.bucketName, fileName).put(Body=data)
             # Create path to stream data to on s3
             s3Path = 's3://{0}/{1}'.format(self.bucketName, fileName)
             return s3Path
