@@ -1,0 +1,3 @@
+To run on a local container with aws config (secret and access keys)
+docker build -t facebook_scraper .
+docker run -v ~/.aws:/root/.aws -t facebook_scraper
