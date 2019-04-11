@@ -26,7 +26,7 @@ mostCommonDigit = digitCounter.most_common(1)
 print('mostCommonDigit = {}'.format(mostCommonDigit[0][0]))
 print('mostCommonDigit Frequency = {}'.format(mostCommonDigit[0][1]))
 print('digitCounter dict = {}'.format(dict(digitCounter)))
-topDigitList = [x[0] for x in digitCounter.most_common(5)]
+topDigitList = [x[0] for x in digitCounter.most_common() if not x[0].isalpha()]
 print(mostCommonDigit)
 print('topDigitList = {}'.format(topDigitList))
 
@@ -48,3 +48,6 @@ print(c1 & c2)
 
 print('\nUnion (taking maximums):')
 print(c1 | c2)
+
+newType = [(v,k) for k,v in digitCounter.items()]
+print(newType)
