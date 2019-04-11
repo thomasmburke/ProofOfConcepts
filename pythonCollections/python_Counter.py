@@ -23,7 +23,12 @@ myList = ['r','4']
 digitCounter.update(myList)
 
 mostCommonDigit = digitCounter.most_common(1)
+print('mostCommonDigit = {}'.format(mostCommonDigit[0][0]))
+print('mostCommonDigit Frequency = {}'.format(mostCommonDigit[0][1]))
+print('digitCounter dict = {}'.format(dict(digitCounter)))
+topDigitList = [x[0] for x in digitCounter]
 print(mostCommonDigit)
+print('topDigitList = {}'.format(topDigitList))
 
 # Counter Arithmetic
 c1 = Counter(['a', 'b', 'c', 'a', 'b', 'b'])
