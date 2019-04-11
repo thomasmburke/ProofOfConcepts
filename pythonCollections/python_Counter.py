@@ -17,5 +17,10 @@ digitCounter = Counter()
 #    digitCounter[char] += 1
 digitCounter.update(newString)
 print(digitCounter.most_common(5))
+
+# NOTE: the update function can be used with a string, list, or dict
+myList = ['r','4']
+digitCounter.update(myList)
+
 mostCommonDigit = digitCounter.most_common(1)
 print(mostCommonDigit)
