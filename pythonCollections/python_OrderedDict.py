@@ -30,3 +30,15 @@ print('sorted by value...')
 print(d3)
 print('sorted by key string length')
 print(d4)
+
+
+print('*****************')
+def giveKeys(x):
+    return x[0]
+
+d5 = OrderedDict(sorted(d.items(), key=giveKeys))
+print('printing d5...')
+print(d5)
+
+print(d.items())
+#print(giveKeys(d.items()))
