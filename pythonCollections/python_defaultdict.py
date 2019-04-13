@@ -8,4 +8,9 @@ d = defaultdict(list) # all values will be added in the form of a list
 for color in s:
     for k,v in color.items():
         d[k].append(v)
-print(dict(d))
+#print(dict(d))
+
+
+newDict = defaultdict(dict)
+newDict['a']['b'] = 1
+print(newDict)
