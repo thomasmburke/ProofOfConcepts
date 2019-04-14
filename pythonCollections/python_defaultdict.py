@@ -15,8 +15,10 @@ newDict = defaultdict(dict)
 newDict['a']['b'] = 1
 print(newDict)
 
-import collections
+
+
 # floyd warshall Algorithm
+import collections
 def calcEquation(equations, values, queries):
     quot = collections.defaultdict(dict)
     for (num, den), val in zip(equations, values):
@@ -37,3 +39,54 @@ values = [2.0, 3.0]
 queries = [ ["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"] ]
 
 print(calcEquation(equations, values, queries))
+
+
+# Breadth First Search
+
+from collections import deque
+
+graph = {
+          'a': {'b': 40, 'c':  4},
+          'b': {'c':  3, 'd':  5, 'e':  2},
+          'c': {'b': 4},
+          'd': {'b':  1, 'c':  5},
+          'e': {'d': 2}
+        }
+
+# queue for bfs
+q = deque()
+
+# distances of nodes
+dist = {}
+
+# paths to each node
+paths = defaultdict(list)
+
+# breadth-first search
+dist['a'] = 0
+q.append('a')
+
+while q:
+    u = q.popleft()
+    for k in graph[u]:
+        # if we have not seen the vertex yet calculate the distance and path
+        if k not in dist:
+            q.append(k)
+            dist[k] = dist[u] + graph[u][k]
+            paths[k] = paths[u][:]
+            paths[k].append(u)
+        # if we have seen the vertex before see if we got there over a shorter distance
+        elif dist[k] > dist[u] + graph[u][k]:
+            dist[k] = dist[u] + graph[u][k]
+            q.append(k)
+            paths[k] = paths[u][:]
+            paths[k].append(u)
+
+
+# print distances
+print ("Distances: ")
+for k, v in dist.items():
+    print ("Distance of Node {0}: {1}".format(k, v))
+
+for k, v in paths.items():
+    print('path to {0}: {1}'.format(k,v))
